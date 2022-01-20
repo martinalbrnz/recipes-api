@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Recipes API</title>
+  </head>
+  <body>
+      <header>
+          <h1>Recipes API</h1>
+          <ul>
+            <li><a href="#how-to">How to</a></li>
+            <li><a href="#results">Results</a></li>
+        </ul>
+    </header>
+
+    <div id="how-to" class="how-to section">
+      <h2 class="how-to_title">How to use it?</h2>
+      <p>For now, there are just a few implementations</p>
+      
+        <div class="how-to_item">
+            <h5>GET http://localhost:3000/api/recipes/</h5>
+            <p>Returns a JSON object with all the recipes in the database</p>
+        </div>
+
+      <div class="how-to_item">
+        <h5>GET http://localhost:3000/api/recipes/vegetarian</h5>
+        <p>Returns a JSON object with all the vegetarian recipes</p>
+      </div>
+
+      <div class="how-to_item">
+        <h5>GET http://localhost:3000/api/recipes/:id</h5>
+        <p>Returns a JSON object with a specific recipe</p>
+      </div>
+    </div>
+
+    <div id="results" class="results section">
+      <h2>Results</h2>
+      <p>The API will provide a JSON object response.</p>
+      <p>Here's an example of the output:</p>
+      <pre class="preformated">
+[
+    {
+        "_id":"529459752ed4a1e4",
+        "title":"Cheese Pizza",
+        "ingredients":[
+            {
+                "name":"flour",
+                "ammount":500,
+                "_id":"755f02755a36e3"
+            },
+            {
+                "name":"water",
+                "ammount":420,
+                "_id":"755f02755a36e4"
+            },
+            {
+                "name":"yest",
+                "ammount":20,
+                "_id":"755f02755a36e5"
+            }
+        ],
+        "utensils":[
+            {
+                "name":"mould",
+                "ammount":1,
+                "_id":"755f02755a36e9"
+            },
+            {
+                "name":"boul",
+                "ammount":1,
+                "_id":"755f02755a36ea"
+            }
+        ],
+        "instructions":[
+            {
+                "description":"Mix flour with water",
+                "order":1,
+                "_id":"755f02755a36eb"
+            },
+            {
+                "description":"Add salt.",
+                "order":2,
+                "_id":"755f02755a36ec"
+            }
+        ],
+        "vegetarian":true,
+        "calories":480,
+        "time":45,
+        "__v":0
+    }
+]
+        </pre
+      >
+    </div>
+  </body>
+</html>

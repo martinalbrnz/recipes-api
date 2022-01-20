@@ -1,0 +1,90 @@
+*{
+    box-sizing: border-box;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+body{
+    background-color: white;
+    padding: 0;
+    margin: 0;
+}
+
+header{
+    position: fixed;
+    height: 4em;
+    width: 100%;
+    padding-left: 1em;
+    background: linear-gradient(90deg, rgba(200, 200, 200, 1) 0%, rgba(220,220,220,1) 50%, rgba(180,180,180,1) 100%);
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    justify-content: space-between;
+    z-index: 100;
+}
+h1{
+    font-size: 1.5em;
+}
+h2{
+    font-size: 1.3em;
+}
+
+header>ul{
+    display: flex;
+    flex-direction: row;
+}
+header>ul>li{
+    width: 20vw;
+    list-style: none;
+}
+header>ul>li>a{
+    text-decoration: inherit;
+    color: black;
+}
+
+
+.how-to {
+    padding: 10px;
+    position: relative;
+    padding-top: 4em;
+}
+
+.how-to_item{
+    outline: #CCC solid 1px;
+    padding: 4px 0;
+    margin: 20px 0;
+    background-color: #EEE;
+}
+
+.results{
+    padding: 4em 10px ;
+}
+
+pre{
+    background-color: #EEE;
+}
+
+@media only screen and (min-width: 481px) {
+    header{
+        padding: 0 3em;
+        justify-content: space-between;
+
+    }
+    .section{
+        margin: 0 30px;
+    }
+    .how-to_item{
+        outline: #CCC solid 1px;
+        background-color: #EEE;
+    }
+}
+
+@media only screen and (min-width: 641px) {
+    header{
+        padding: 0 5em;
+        justify-content: space-between;
+    }
+
+    .how-to_item{
+        outline: #CCC solid 1px;
+        background-color: #EEE;
+    }
+}
