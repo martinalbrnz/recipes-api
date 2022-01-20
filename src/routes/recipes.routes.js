@@ -11,9 +11,22 @@ router.get('/', async (req, res) => {
     res.json(recipes);
 });
 
+//  Get recipe by ID
+router.get('/id/:id', async (req, res) => {
+    const recipe = await Recipe.findById(req.params.id);
+    res.json(recipe);
+});
+
 //  Get favorite recipes
 
-//  Get recipe by name
+//  Get recipe by ingredient
+router.get('/ing/:ingredient', async (req, res) => {
+    const ingredient = req.params.ingredient;
+    const recipes = await Recipe.find({"ingredients.name": ingredient});
+    res.json(recipes);
+})
+
+//  Get recipes by calories
 
 //  Get vegetarian recipes
 router.get('/vegetarian', async (req, res) => {
