@@ -17,16 +17,27 @@ router.get('/id/:id', async (req, res) => {
     res.json(recipe);
 });
 
-//  Get favorite recipes
-
 //  Get recipe by ingredient
 router.get('/ing/:ingredient', async (req, res) => {
     const ingredient = req.params.ingredient;
     const recipes = await Recipe.find({"ingredients.name": ingredient});
     res.json(recipes);
-})
+});
+
+//  Get favorite recipes
 
 //  Get recipes by calories
+router.get('/calories/:min/:max', async (req,res) => {
+    const min = req.params.min;
+    const max = req.params.max || 0;
+    const recipes = await Recipe.find({
+        $and: [
+            {"calories": {$gte: min}}, 
+            {"calories": {$lte: max}}
+        ]
+    });
+    res.json(recipes);
+});
 
 //  Get vegetarian recipes
 router.get('/vegetarian', async (req, res) => {
